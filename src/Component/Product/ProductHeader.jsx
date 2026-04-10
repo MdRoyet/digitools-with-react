@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const ProductHeader = ({ cartCount }) => {
-  // This state tracks which button is "active"
-  const [activeTab, setActiveTab] = useState("products");
-
+const ProductHeader = ({ cartCount, showCart, setShowCart }) => {
   return (
     <section className="pt-20 pb-12 text-center">
       {/* Main Title */}
@@ -21,9 +18,9 @@ const ProductHeader = ({ cartCount }) => {
       <div className="inline-flex items-center p-1 bg-white border border-gray-100 rounded-full shadow-sm">
         {/* Products Button */}
         <button
-          onClick={() => setActiveTab("products")}
+          onClick={() => setShowCart(false)}
           className={`px-10 py-3 rounded-full font-bold text-sm transition-all duration-300 ${
-            activeTab === "products"
+            !showCart
               ? "bg-gradient-to-r from-[#4f39f6] to-[#9514fa] text-white shadow-md"
               : "text-gray-600 hover:text-[#4f39f6]"
           }`}
@@ -33,9 +30,9 @@ const ProductHeader = ({ cartCount }) => {
 
         {/* Cart Button */}
         <button
-          onClick={() => setActiveTab("cart")}
+          onClick={() => setShowCart(true)}
           className={`px-10 py-3 rounded-full font-bold text-sm transition-all duration-300 ${
-            activeTab === "cart"
+            showCart
               ? "bg-gradient-to-r from-[#4f39f6] to-[#9514fa] text-white shadow-md"
               : "text-gray-600 hover:text-[#4f39f6]"
           }`}

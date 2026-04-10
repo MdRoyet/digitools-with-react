@@ -1,31 +1,68 @@
-import "./App.css";
-import React, { Suspense, useState } from "react";
+import React, { useState } from "react";
+import "./App.css"; // 👈 THIS BRINGS ALL YOUR STYLES BACK!
 import NavBar from "./Component/NavBar/NavBar";
 import Banner from "./Component/Banner/Banner";
 import ProductHeader from "./Component/Product/ProductHeader";
 import ProductList from "./Component/Product/ProductList";
+import Cart from "./Component/Product/Cart";
+
+// Import Toastify and its CSS
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  // Start with 0
-  const [cartCount, setCartCount] = useState(0);
-  // Function to increase the count
-  const handleAddToCart = () => {
-    setCartCount((prevCount) => prevCount + 1);
+  const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
+
+  const handleAddToCart = (product) => {
+    if (!cart.find((item) => item.id === product.id)) {
+      setCart([...cart, product]);
+      toast.success(`${product.name} added to cart!`);
+    } else {
+      toast.warning("Item is already in the cart!");
+    }
   };
+
+  const handleRemove = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+    toast.info("Item removed from cart");
+  };
+
+  const handleCheckout = () => {
+    if (cart.length === 0) return;
+
+    setCart([]);
+    setShowCart(false);
+    toast.success("Order Processed Successfully! 🎉");
+  };
+
   return (
-    <>
-      {/* Navbar */}
-      <NavBar cartCount={cartCount}></NavBar>
+    <div className="min-h-screen bg-white relative">
+      {/* 👇 Fixed: passed as a prop, using self-closing tags */}
+      <NavBar cartCount={cart.length} />
 
-      {/* Banner */}
-      <Banner></Banner>
+      <Banner />
 
-      {/* Pass count to Header to show Cart(X) */}
-      <ProductHeader cartCount={cartCount}></ProductHeader>
+      <ProductHeader
+        cartCount={cart.length}
+        showCart={showCart}
+        setShowCart={setShowCart}
+      />
 
-      {/* Pass the function to ProductList so buttons can trigger it */}
-      <ProductList onAddToCart={handleAddToCart}></ProductList>
-    </>
+      <main className="max-w-7xl mx-auto px-4 pb-20">
+        {showCart ? (
+          <Cart
+            cartItems={cart}
+            onRemove={handleRemove}
+            onCheckout={handleCheckout}
+          />
+        ) : (
+          <ProductList onAddToCart={handleAddToCart} />
+        )}
+      </main>
+
+      <ToastContainer />
+    </div>
   );
 }
 

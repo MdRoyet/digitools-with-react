@@ -71,7 +71,7 @@ const ProductCard = ({ product, onAddToCart }) => {
 
       {/* 7. Functional Buy Now Button */}
       <button
-        onClick={onAddToCart} // This triggers the state increase in App.jsx
+        onClick={() => onAddToCart(product)} // This triggers the state increase in App.jsx
         className="w-full py-4 bg-[#7C3AED] hover:bg-[#6D28D9] text-white rounded-2xl font-bold text-lg transition-all active:scale-[0.98] shadow-lg shadow-purple-100"
       >
         Buy Now
