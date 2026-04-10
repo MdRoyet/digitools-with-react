@@ -5,9 +5,18 @@ const Cart = ({ cartItems, onRemove, onCheckout }) => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="text-center py-20 border-2 border-dashed border-gray-100 rounded-[2.5rem]">
-        <h3 className="text-2xl font-bold text-gray-400">Your cart is empty</h3>
-        <p className="text-gray-400">Add some tools to get started!</p>
+      <div className="text-center py-20 border-2 border-dashed border-gray-100 rounded-[2.5rem] bg-gray-50/50 transition-all duration-500 hover:scale-[1.01]">
+        {/* Animated Cart Emoji */}
+        <div className="text-6xl mb-4 animate-bounce">🛒</div>
+
+        {/* Pulsing Text */}
+        <h3 className="text-2xl font-bold text-gray-400 py-2 animate-pulse">
+          Your cart is empty
+        </h3>
+
+        <p className="text-gray-500 opacity-80">
+          Add some tools to get started!
+        </p>
       </div>
     );
   }
