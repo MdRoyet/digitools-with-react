@@ -41,7 +41,16 @@ function App() {
   return (
     <div className="min-h-screen bg-white relative">
       {/* 👇 Fixed: passed as a prop, using self-closing tags */}
-      <NavBar cartCount={cart.length} />
+      <NavBar
+        cartCount={cart.length}
+        onCartClick={() => {
+          if (cart.length > 0) {
+            setShowCart(true);
+          } else {
+            toast.info("Your cart is empty!"); // Optional: tells them why it's not clicking!
+          }
+        }}
+      />
 
       {!showCart && <Banner />}
 
