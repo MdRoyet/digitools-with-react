@@ -11,6 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import GettingStarted from "./Component/GettingStarted/GettingStarted";
 import PricingList from "./Component/PricingList/PricingList";
+import FooterWorkflow from "./Component/FooterWorkflow/FooterWorkflow";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -64,6 +65,7 @@ function App() {
 
       <GettingStarted></GettingStarted>
       <PricingList></PricingList>
+      <FooterWorkflow></FooterWorkflow>
 
       <ToastContainer />
     </div>
