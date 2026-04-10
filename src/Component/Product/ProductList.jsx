@@ -6,7 +6,7 @@ const ProductList = ({ onAddToCart, cart }) => {
 
   useEffect(() => {
     // Fetching your JSON data
-    fetch("/src/data/data.json")
+    fetch("/data.json")
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => console.error("Error loading products:", err));
