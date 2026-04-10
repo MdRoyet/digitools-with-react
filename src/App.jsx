@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.css"; // 👈 THIS BRINGS ALL YOUR STYLES BACK!
+import "./App.css";
 import NavBar from "./Component/NavBar/NavBar";
 import Banner from "./Component/Banner/Banner";
 import ProductHeader from "./Component/Product/ProductHeader";
@@ -10,6 +10,7 @@ import Cart from "./Component/Product/Cart";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import GettingStarted from "./Component/GettingStarted/GettingStarted";
+import PricingList from "./Component/PricingList/PricingList";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -62,6 +63,7 @@ function App() {
       </main>
 
       <GettingStarted></GettingStarted>
+      <PricingList></PricingList>
 
       <ToastContainer />
     </div>
