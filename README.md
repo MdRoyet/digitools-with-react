@@ -1,4 +1,4 @@
-# 🚀 [Name of your Project]
+# 🚀 [DigiTools]
 
 <p align="center">
   <img src="https://img.shields.io/github/stars/[MdRoyet]/[digitools-with-react]?style=for-the-badge&color=7C3AED" alt="stars">

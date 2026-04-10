@@ -2,7 +2,6 @@ import React from "react";
 import { User, Package, Rocket } from "lucide-react";
 
 const GettingStarted = () => {
-  // Array to map through the steps cleanly
   const steps = [
     {
       id: "01",
@@ -27,7 +26,6 @@ const GettingStarted = () => {
   ];
 
   return (
-    // The background is a very light slate color to make the white cards pop
     <section className="bg-[#F8FAFC] py-24 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}

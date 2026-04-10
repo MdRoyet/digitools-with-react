@@ -1,17 +1,14 @@
 import React from "react";
-// Assuming banner.png is the image of the person with the tech overlay
+
 import bannerImg from "../../assets/banner.png";
-import { Play } from "lucide-react"; // npm install lucide-react
+import { Play } from "lucide-react";
 
 const Banner = () => {
   return (
     <section className="pt-20">
-      {/* Hero Content Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="flex flex-col lg:flex-row items-center gap-12">
-          {/* Left Column: Text Content */}
           <div className="flex-1 text-center lg:text-left">
-            {/* New Feature Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 border border-purple-200 mb-6">
               <span className="w-3 h-3 rounded-full bg-[#4f39f6] animate-pulse"></span>
               <span className="text-1xl font-semibold text-[#4f39f6]">
@@ -43,7 +40,6 @@ const Banner = () => {
             </div>
           </div>
 
-          {/* Right Column: Image */}
           <div className="flex-1 w-full max-w-xl lg:max-w-none">
             <div className="relative">
               <img
@@ -56,7 +52,6 @@ const Banner = () => {
         </div>
       </div>
 
-      {/* Stats Bar */}
       <div className="bg-gradient-to-r from-[#4f39f6] to-[#9514fa] py-12">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-around items-center text-white gap-8 md:gap-0">
           <div className="text-center">

@@ -9,7 +9,7 @@ import GettingStarted from "./Component/GettingStarted/GettingStarted";
 import PricingList from "./Component/PricingList/PricingList";
 import FooterWorkflow from "./Component/FooterWorkflow/FooterWorkflow";
 import Footer from "./Component/Footer/Footer";
-// Import Toastify and its CSS
+// Import Toastify
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -40,7 +40,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white relative">
-      {/* 👇 Fixed: passed as a prop, using self-closing tags */}
       <div className="pt-20">
         <NavBar
           cartCount={cart.length}
@@ -48,7 +47,7 @@ function App() {
             if (cart.length > 0) {
               setShowCart(true);
             } else {
-              toast.info("Your cart is empty!"); // Optional: tells them why it's not clicking!
+              toast.info("Your cart is empty!");
             }
           }}
         />
