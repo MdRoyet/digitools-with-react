@@ -57,7 +57,7 @@ function App() {
             onCheckout={handleCheckout}
           />
         ) : (
-          <ProductList onAddToCart={handleAddToCart} />
+          <ProductList onAddToCart={handleAddToCart} cart={cart} />
         )}
       </main>
 

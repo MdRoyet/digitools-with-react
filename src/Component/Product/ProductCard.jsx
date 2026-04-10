@@ -1,7 +1,8 @@
 import React from "react";
 import { Check } from "lucide-react";
 
-const ProductCard = ({ product, onAddToCart }) => {
+const ProductCard = ({ product, onAddToCart, cart }) => {
+  const isAdded = (cart || []).some((item) => item.id === product.id);
   // Logic to match the exact badge colors from your reference image
   const getTagStyles = (type) => {
     switch (type) {
@@ -69,12 +70,17 @@ const ProductCard = ({ product, onAddToCart }) => {
         ))}
       </ul>
 
-      {/* 7. Functional Buy Now Button */}
+      {/* 3. The Dynamic Button */}
       <button
-        onClick={() => onAddToCart(product)} // This triggers the state increase in App.jsx
-        className="w-full py-4 bg-[#7C3AED] hover:bg-[#6D28D9] text-white rounded-2xl font-bold text-lg transition-all active:scale-[0.98] shadow-lg shadow-purple-100"
+        onClick={() => onAddToCart(product)}
+        className={`w-full py-4 rounded-2xl font-bold text-lg transition-all shadow-lg 
+            ${
+              isAdded
+                ? "bg-[#22C55E] text-white shadow-green-100 cursor-default" // Turns Green when added!
+                : "bg-[#7C3AED] hover:bg-[#6D28D9] text-white shadow-purple-100 active:scale-[0.98]"
+            }`}
       >
-        Buy Now
+        {isAdded ? "Added to Cart ✓" : "Buy Now"}
       </button>
     </div>
   );

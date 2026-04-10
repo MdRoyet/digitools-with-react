@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 
-const ProductList = ({ onAddToCart }) => {
+const ProductList = ({ onAddToCart, cart }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -20,6 +20,7 @@ const ProductList = ({ onAddToCart }) => {
             key={product.id}
             product={product}
             onAddToCart={onAddToCart}
+            cart={cart}
           />
         ))}
       </div>
