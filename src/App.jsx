@@ -33,7 +33,6 @@ function App() {
     if (cart.length === 0) return;
 
     setCart([]);
-    setShowCart(false);
     toast.success("Order Processed Successfully! 🎉");
   };
 
