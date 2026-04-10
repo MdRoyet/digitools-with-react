@@ -9,6 +9,7 @@ import Cart from "./Component/Product/Cart";
 // Import Toastify and its CSS
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import GettingStarted from "./Component/GettingStarted/GettingStarted";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -60,6 +61,8 @@ function App() {
           <ProductList onAddToCart={handleAddToCart} cart={cart} />
         )}
       </main>
+
+      <GettingStarted></GettingStarted>
 
       <ToastContainer />
     </div>

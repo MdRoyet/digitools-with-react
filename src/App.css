@@ -1,2 +1,9 @@
+:root,
+html,
+body,
+* {
+  font-family: "Manrope", sans-serif !important;
+}
+
 @import "tailwindcss";
 @plugin "daisyui";
