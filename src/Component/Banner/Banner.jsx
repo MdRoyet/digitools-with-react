@@ -13,8 +13,8 @@ const Banner = () => {
           <div className="flex-1 text-center lg:text-left">
             {/* New Feature Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 border border-purple-200 mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#4f39f6] animate-pulse"></span>
-              <span className="text-xs font-semibold text-[#4f39f6]">
+              <span className="w-3 h-3 rounded-full bg-[#4f39f6] animate-pulse"></span>
+              <span className="text-1xl font-semibold text-[#4f39f6]">
                 New: AI-Powered Tools Available
               </span>
             </div>

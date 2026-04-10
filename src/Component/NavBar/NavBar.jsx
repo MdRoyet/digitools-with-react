@@ -11,7 +11,7 @@ const NavBar = ({ cartCount }) => {
           <div className="flex-shrink-0">
             <a
               href="/"
-              className="text-3xl font-bold bg-gradient-to-r from-[#4f39f6] to-[#9514fa] bg-clip-text text-transparent"
+              className="text-5xl font-bold bg-gradient-to-r from-[#4f39f6] to-[#9514fa] bg-clip-text text-transparent"
             >
               DigiTools
             </a>

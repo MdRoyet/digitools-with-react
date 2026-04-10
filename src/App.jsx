@@ -43,7 +43,7 @@ function App() {
       {/* 👇 Fixed: passed as a prop, using self-closing tags */}
       <NavBar cartCount={cart.length} />
 
-      <Banner />
+      {!showCart && <Banner />}
 
       <ProductHeader
         cartCount={cart.length}
@@ -63,9 +63,13 @@ function App() {
         )}
       </main>
 
-      <GettingStarted></GettingStarted>
-      <PricingList></PricingList>
-      <FooterWorkflow></FooterWorkflow>
+      {!showCart && (
+        <>
+          <GettingStarted></GettingStarted>
+          <PricingList></PricingList>
+          <FooterWorkflow></FooterWorkflow>
+        </>
+      )}
       <Footer></Footer>
 
       <ToastContainer />
